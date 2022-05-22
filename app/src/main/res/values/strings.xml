@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ECommerce</string>
+    <string name="salesImgDesc">Sales</string>
+    <string name="contacts_text">Контакты</string>
+    <string name="about_text">Про нас</string>
+    <string name="main_text">Главная</string>
+    <string name="logo_of_app_1">Courses</string>
+    <string name="logo_of_app_2">App</string>
+    <string name="level">Уровень:</string>
+    <string name="startStudying">Старт обучения:</string>
+</resources>
