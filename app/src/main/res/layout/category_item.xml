@@ -7,10 +7,12 @@
     android:layout_marginStart="10dp">
 
     <ImageView
-        android:id="@+id/item_category"
+        android:id="@+id/categoryBg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_bg_category_item"/>
+        android:src="@drawable/ic_bg_category_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/category_title"
@@ -20,8 +22,7 @@
         android:text="Category"
         android:textColor="@color/black"
         android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/item_category"
-        app:layout_constraintEnd_toEndOf="@+id/item_category"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

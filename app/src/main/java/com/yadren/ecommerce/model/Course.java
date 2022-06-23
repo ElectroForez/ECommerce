@@ -1,16 +1,34 @@
 package com.yadren.ecommerce.model;
 
 public class Course {
-    int id;
-    String title, img, date, level, color;
+    int id, category;
+    String title, img, date, level, color, text;
 
-    public Course(int id, String title, String img, String date, String level, String color) {
+    public Course(int id, String title, String img, String date, String level, String color, String text, int category) {
         this.id = id;
         this.title = title;
         this.img = img;
         this.date = date;
         this.level = level;
         this.color = color;
+        this.text = text;
+        this.category = category;
+    }
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getText() {
+        return text;
     }
 
     public int getId() {

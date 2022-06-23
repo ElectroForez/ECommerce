@@ -1,7 +1,11 @@
 package com.yadren.ecommerce.adapters;
 
+import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.yadren.ecommerce.CoursePage;
 import com.yadren.ecommerce.R;
 import com.yadren.ecommerce.model.Course;
 
@@ -40,7 +45,8 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
         Course curCourse = courses.get(position);
 
         String colorName = curCourse.getColor();
-        holder.courseBg.setBackgroundColor(Color.parseColor(colorName));
+        int color = Color.parseColor(colorName);
+        holder.courseBg.setBackgroundColor(color);
 
         String imageName = "ic_"  + curCourse.getImg();
         int imageId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
@@ -54,6 +60,30 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
 
         String level = curCourse.getLevel();
         holder.courseLevel.setText(level);
+
+        String text = curCourse.getText();
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, CoursePage.class);
+
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(
+                        (Activity) context,
+                        new Pair<View, String>(holder.courseImage, "courseImage")
+                );
+
+                intent.putExtra("courseBg", color);
+                intent.putExtra("courseImageId", imageId);
+                intent.putExtra("courseTitle", title);
+                intent.putExtra("courseDate", date);
+                intent.putExtra("courseLevel", level);
+                intent.putExtra("courseText", text);
+
+                context.startActivity(intent, options.toBundle());
+
+            }
+        });
     }
 
     @Override

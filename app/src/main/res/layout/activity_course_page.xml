@@ -77,10 +77,11 @@
 
     <ImageView
         android:id="@+id/coursePageImage"
-        android:layout_width="346dp"
+        android:layout_width="0dp"
         android:layout_height="195dp"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_java_course"
+        android:transitionName="courseImage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
         app:layout_constraintTop_toTopOf="parent" />
@@ -167,7 +168,7 @@
             app:layout_constraintTop_toTopOf="@+id/coursePageDate" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/courseText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"

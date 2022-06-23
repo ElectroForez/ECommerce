@@ -22,7 +22,8 @@
                 android:id="@+id/courseImg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_java_course" />
+                android:src="@drawable/ic_java_course"
+                android:transitionName="courseImage" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/courseBg"
@@ -40,9 +41,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Профессия "
+                    android:text="Название курса"
                     android:textColor="@color/white"
                     android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
