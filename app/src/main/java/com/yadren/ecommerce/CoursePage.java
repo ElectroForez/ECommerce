@@ -4,8 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.yadren.ecommerce.model.Order;
+
+import java.util.List;
 
 public class CoursePage extends AppCompatActivity {
 
@@ -35,5 +41,16 @@ public class CoursePage extends AppCompatActivity {
         coursePageLevel.setText(coursePageLevel_value);
         courseText.setText(coursePageText_value);
         coursePageImage.setImageResource(coursePageImage_value);
+    }
+
+    public void addToCart(View view) {
+        int courseId = getIntent().getIntExtra("courseId", 0);
+        List<Integer> cartItems = Order.getItems();
+        if (cartItems.contains(courseId)) {
+            Toast.makeText(this, "Курс уже лежит в корзине", Toast.LENGTH_SHORT).show();
+        } else {
+            cartItems.add(courseId);
+            Toast.makeText(this, "Добавлено в корзину", Toast.LENGTH_SHORT).show();
+        }
     }
 }

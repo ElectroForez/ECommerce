@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/mainBgColor"
-    tools:context=".MainActivity">
+    tools:context=".OrderPage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -31,7 +30,7 @@
             android:layout_width="102dp"
             android:layout_height="108dp"
             android:layout_marginTop="88dp"
-            android:fontFamily="@font/montserrat_bold"
+            android:fontFamily="@font/montserrat"
             android:gravity="center_horizontal"
             android:paddingTop="30dp"
             android:rotation="270"
@@ -58,7 +57,7 @@
         <TextView
             android:id="@+id/contacts"
             android:layout_width="100dp"
-            android:layout_height="111dp"
+            android:layout_height="0dp"
             android:layout_marginBottom="200dp"
             android:fontFamily="@font/montserrat"
             android:gravity="center_horizontal"
@@ -68,9 +67,10 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/sales_picture"
+            app:layout_constraintDimensionRatio="h,1:1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/about"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/about" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -100,47 +100,17 @@
         app:layout_constraintStart_toEndOf="@+id/logo_app_1"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/filterButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ListView
+        android:id="@+id/orderListView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/logo_app_1"
-        app:srcCompat="@drawable/ic_filter_button" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/categoryRecycler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toBottomOf="@+id/filterButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/filterButton"
-        app:layout_constraintTop_toTopOf="@+id/filterButton" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/courseRecycler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/filterButton"
-        app:layout_constraintTop_toBottomOf="@+id/categoryRecycler" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:onClick="clickCartButton"
-        android:src="@drawable/ic_cart_button"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/courseRecycler" />
-
+        app:layout_constraintTop_toBottomOf="@+id/logo_app_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -89,5 +90,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         courseAdapter.notifyDataSetChanged();
+    }
+
+    public void clickCartButton(View view) {
+        Intent intent = new Intent(this, OrderPage.class);
+        startActivity(intent);
     }
 }

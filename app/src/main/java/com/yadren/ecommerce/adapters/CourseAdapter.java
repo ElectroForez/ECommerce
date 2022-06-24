@@ -44,24 +44,25 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
         Course curCourse = courses.get(position);
 
-        String colorName = curCourse.getColor();
-        int color = Color.parseColor(colorName);
-        holder.courseBg.setBackgroundColor(color);
+        String courseColorName = curCourse.getColor();
+        int curseColor = Color.parseColor(courseColorName);
+        holder.courseBg.setBackgroundColor(curseColor);
 
-        String imageName = "ic_"  + curCourse.getImg();
-        int imageId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
-        holder.courseImage.setImageResource(imageId);
+        String courseImageName = "ic_"  + curCourse.getImg();
+        int courseImageId = context.getResources().getIdentifier(courseImageName, "drawable", context.getPackageName());
+        holder.courseImage.setImageResource(courseImageId);
 
-        String title = curCourse.getTitle();
-        holder.courseTitle.setText(title);
+        String courseTitle = curCourse.getTitle();
+        holder.courseTitle.setText(courseTitle);
 
-        String date = curCourse.getDate();
-        holder.courseDate.setText(date);
+        String courseDate = curCourse.getDate();
+        holder.courseDate.setText(courseDate);
 
-        String level = curCourse.getLevel();
-        holder.courseLevel.setText(level);
+        String courseLevel = curCourse.getLevel();
+        holder.courseLevel.setText(courseLevel);
 
-        String text = curCourse.getText();
+        String courseText = curCourse.getText();
+        int courseId = curCourse.getId();
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,12 +74,13 @@ public class CourseAdapter extends RecyclerView.Adapter<CourseAdapter.CourseView
                         new Pair<View, String>(holder.courseImage, "courseImage")
                 );
 
-                intent.putExtra("courseBg", color);
-                intent.putExtra("courseImageId", imageId);
-                intent.putExtra("courseTitle", title);
-                intent.putExtra("courseDate", date);
-                intent.putExtra("courseLevel", level);
-                intent.putExtra("courseText", text);
+                intent.putExtra("courseBg", curseColor);
+                intent.putExtra("courseImageId", courseImageId);
+                intent.putExtra("courseTitle", courseTitle);
+                intent.putExtra("courseDate", courseDate);
+                intent.putExtra("courseLevel", courseLevel);
+                intent.putExtra("courseText", courseText);
+                intent.putExtra("courseId", courseId);
 
                 context.startActivity(intent, options.toBundle());
 
