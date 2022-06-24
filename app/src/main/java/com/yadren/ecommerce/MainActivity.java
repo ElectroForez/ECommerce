@@ -96,4 +96,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, OrderPage.class);
         startActivity(intent);
     }
+
+    public static Course findCourseById(int courseId) {
+        for (Course course: courseList)
+            if (course.getId() == courseId)
+                return course;
+        return null;
+    }
 }

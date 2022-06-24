@@ -1,5 +1,7 @@
 package com.yadren.ecommerce.model;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,4 +16,5 @@ public class Order {
     public static void setItems(List<Integer> items) {
         Order.items = items;
     }
+
 }
